@@ -1,12 +1,10 @@
-import random
 from googletrans import Translator
-import time
 
 
 def translate_po_file(input_file, output_file):
     # ایجاد نمونه Translator
     translator = Translator(
-        service_urls=['translate.google.com'])
+        service_urls=['translate.google.com'], timeout=None)
     msgid = ""
     msgstr = ""
     count_translated = 0
@@ -36,7 +34,6 @@ def translate_po_file(input_file, output_file):
             else:
                 output_po.write(line)
                 print("Line: " + line)
-            time.sleep(random.randrange(1, 10))
 
     print("\n##########################################")
     print("ترجمه با موفقیت انجام شد.")
