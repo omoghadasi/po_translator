@@ -36,7 +36,7 @@ def translate_po_file(input_file, output_file):
                 msgstr += line.strip()[1:-1]
 
             # ترجمه متن و نوشتن در فایل خروجی
-            if not line.strip() and msgid and msgstr:
+            if not line.strip() and msgid:
                 translation = translator.translate(msgid, dest='fa')
                 output_po.write('msgid "' + msgid + '"\n')
                 output_po.write('msgstr "' + translation.text + '"\n\n')
