@@ -3,7 +3,8 @@ from googletrans import Translator
 
 def translate_po_file(input_file, output_file):
     # ایجاد نمونه Translator
-    translator = Translator(service_urls=['translate.google.com'])
+    translator = Translator(
+        service_urls=['translate.google.com'], timeout=None)
 
     # متغیرهای کنترلی ترجمه
     is_msgid = False
