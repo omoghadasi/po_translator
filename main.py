@@ -19,17 +19,14 @@ def translate_po_file(input_file, output_file):
                 if msgid:
                     translation = translator.translate(msgid, dest='fa')
                     msgstr = translation.text
+                    print("-----------------------------------")
+                    print('EN: ' + msgid)
+                    print('FA: ' + msgstr)
                 output_po.write('msgstr "' + msgstr + '"\n\n')
-            # elif is_msgid and line.startswith('"'):
-            #     # برداشتن بخش متنی از خطوط بعدی msgid
-            #     msgid += line.strip()[1:-1]
-            # elif is_msgstr and line.startswith('"'):
-            #     # برداشتن بخش متنی از خطوط بعدی msgstr
-            #     msgstr += line.strip()[1:-1]
             else:
                 output_po.write(line)
 
-    print("##########################################")
+    print("\n##########################################")
     print("ترجمه با موفقیت انجام شد.")
 
 
